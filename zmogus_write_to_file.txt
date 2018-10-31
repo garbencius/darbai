@@ -1,0 +1,50 @@
+namespace Zmogus
+{
+    class Program
+    {
+        public struct zmogus
+        {
+            public string vardas;
+            public string pavarde;
+            public int ugis;
+            public string adresas;
+        }
+
+        string[] array = { };
+                 
+        static void Main(string[] array)
+        {
+            
+            zmogus[] zmogus = new zmogus[4];
+             
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine("Koks jusu vardas:");
+                zmogus[i].vardas = Console.ReadLine();
+
+                Console.WriteLine("Kokia jusu pavarde:");
+                zmogus[i].pavarde = Console.ReadLine();
+
+                Console.WriteLine("Kokiame mieste gyvenate:");
+                zmogus[i].adresas = Console.ReadLine();
+
+                Console.WriteLine("Koks jusu ugis:");
+                zmogus[i].ugis = Convert.ToInt32(Console.ReadLine());
+            }
+
+            StreamWriter SW = new StreamWriter(@"C:\Users\Kompiuteris\source\repos\testas.txt");
+            for (int i = 0; i < 4; i++)
+            {
+                SW.WriteLine("Naujas zmogus yra: Vardas {0}, pavarde {1}, jo ugis {2}, jis gyvena {3}", zmogus[i].vardas, zmogus[i].pavarde, zmogus[i].ugis, zmogus[i].adresas);
+            }
+            SW.Close();
+
+            for (int j = 0; j < 4; j++) 
+             
+            {
+                 Console.WriteLine("Naujas zmogus yra: Vardas {0}, pavarde {1}, jo ugis {2}, jis gyvena {3}", zmogus[j].vardas, zmogus[j].pavarde, zmogus[j].ugis, zmogus[j].adresas);
+            }
+            Console.ReadLine();        
+        }       
+    }
+}
